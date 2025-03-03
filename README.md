@@ -42,6 +42,10 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
 - Ingresa datos como cantidad y descripción cuando se solicite.
 - Usa Escape para salir de submenús o cerrar el programa.
 
+## Captura de Pantalla
+
+![Menú Principal](menu_principal.png)
+
 ## Estructura del Proyecto
 
 - `database.py`: Manejo de la base de datos SQLite.
@@ -53,3 +57,7 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
 ## Contribuir
 
 ¡Las contribuciones son bienvenidas! Por favor, abre un issue o un pull request.
+
+## Licencia
+
+MIT

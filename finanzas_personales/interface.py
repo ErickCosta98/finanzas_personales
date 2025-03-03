@@ -7,7 +7,6 @@ from rich import box
 from rich.layout import Layout
 from rich.text import Text
 from rich.align import Align
-from rich.console import Group
 from prompt_toolkit import PromptSession
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.keys import Keys
@@ -17,7 +16,7 @@ from prompt_toolkit.layout.containers import Window
 from prompt_toolkit.layout.controls import FormattedTextControl
 from prompt_toolkit.formatted_text import FormattedText
 from prompt_toolkit.validation import Validator
-from typing import List, Dict
+from typing import List, Dict, Tuple
 from .database import Database
 from .graphics import GraficaConsola, crear_grafico_categorias
 from .models import FinanzasConfig
@@ -51,8 +50,8 @@ class Interface:
             "Egresos (Imagen)", "Volver"
         ]
 
-    def mostrar_dashboard(self, opcion_seleccionada: int = 0) -> tuple[List[str], FormattedText]:
-        limpiar_pantalla()
+    def preparar_dashboard(self, opcion_seleccionada: int = 0) -> Tuple[List[str], FormattedText, Layout]:
+        """Prepara los datos del dashboard sin imprimirlo."""
         resumen_total = self.db.obtener_resumen()
         resumen_mes = self.db.obtener_resumen_mes_actual()
         ingresos_por_categoria = self.db.obtener_datos_por_categoria("Ingreso", "mes")
@@ -97,8 +96,6 @@ class Interface:
         layout["top_right"].update(grafico_egresos)
         layout["bottom_right"].update(tabla_transacciones)
         
-        console.print(layout)
-        
         menu_text = [("white bold", "Menú:\n")]
         for i, opcion in enumerate(self.opciones_principal):
             if i == opcion_seleccionada:
@@ -106,7 +103,7 @@ class Interface:
             else:
                 menu_text.append(("white", f"  {opcion}\n"))
         
-        return self.opciones_principal, FormattedText(menu_text)
+        return self.opciones_principal, FormattedText(menu_text), layout
 
     async def seleccionar_categoria(self, categorias: List[str], tipo: str) -> str:
         limpiar_pantalla()
@@ -360,10 +357,18 @@ class Interface:
 
     async def menu_principal(self):
         opcion_seleccionada = [0]
-        opciones, initial_menu_text = self.mostrar_dashboard(opcion_seleccionada[0])
+        opciones, menu_text_inicial, dashboard_layout = self.preparar_dashboard(opcion_seleccionada[0])
         
+        # Imprimir el dashboard una vez al inicio
+        console.print(Panel(
+            Align.center("[bold bright_cyan]FINANZAS PERSONALES[/bold bright_cyan]", vertical="middle"),
+            box=box.ROUNDED,
+            border_style="bright_blue"
+        ))
+        console.print(dashboard_layout)
+
         def get_menu_text():
-            opciones, _ = self.mostrar_dashboard(opcion_seleccionada[0])
+            # No volvemos a preparar el dashboard aquí, solo actualizamos el menú
             menu_text = [("white bold", "Menú:\n")]
             for i, opcion in enumerate(opciones):
                 if i == opcion_seleccionada[0]:
@@ -403,6 +408,15 @@ class Interface:
                 console.print("[yellow]¡Hasta pronto![/yellow]")
                 self.db.close()
                 event.app.exit()
+            # Refrescar el dashboard completo después de regresar de un submenú
+            limpiar_pantalla()
+            console.print(Panel(
+                Align.center("[bold bright_cyan]FINANZAS PERSONALES[/bold bright_cyan]", vertical="middle"),
+                box=box.ROUNDED,
+                border_style="bright_blue"
+            ))
+            _, _, new_dashboard = self.preparar_dashboard(opcion_seleccionada[0])
+            console.print(new_dashboard)
             app.layout = PromptLayout(Window(content=FormattedTextControl(get_menu_text())))
 
         app = Application(
