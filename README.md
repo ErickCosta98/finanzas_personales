@@ -23,10 +23,7 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
    cd finanzas_personales
    ```
 
-2. Crear un entorno virtual:
-   ```bash
-   python3 -m venv ./
-   ```
+2. Crear un entorno virtual (opcional, ver instrucciones por sistema operativo abajo).
 
 3. Instala las dependencias:
 
@@ -40,7 +37,87 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
    python3 -m finanzas_personales.main
    ```
 
-## Uso
+## Uso con Entorno Virtual
+
+A continuación, se detallan los comandos para crear y activar un entorno virtual según el sistema operativo y la terminal utilizada.
+
+### Linux / macOS
+
+#### Bash
+```bash
+# Crear entorno virtual
+python3 -m venv venv
+
+# Activar entorno virtual
+source venv/bin/activate
+
+# Desactivar (cuando termines)
+deactivate
+```
+
+#### Zsh
+```zsh
+# Crear entorno virtual
+python3 -m venv venv
+
+# Activar entorno virtual
+source venv/bin/activate
+
+# Desactivar
+deactivate
+```
+
+#### Fish
+```fish
+# Crear entorno virtual
+python3 -m venv venv
+
+# Activar entorno virtual
+source venv/bin/activate.fish
+
+# Desactivar
+deactivate
+```
+
+### Windows
+
+#### CMD
+```cmd
+REM Crear entorno virtual
+python -m venv venv
+
+REM Activar entorno virtual
+venv\Scripts\activate.bat
+
+REM Desactivar
+deactivate
+```
+
+#### PowerShell
+```powershell
+# Crear entorno virtual
+python -m venv venv
+
+# Activar entorno virtual
+.\venv\Scripts\Activate.ps1
+
+# Desactivar
+deactivate
+```
+
+#### Git Bash
+```bash
+# Crear entorno virtual
+python -m venv venv
+
+# Activar entorno virtual
+source venv/Scripts/activate
+
+# Desactivar
+deactivate
+```
+
+## Uso General
 
 - Usa las flechas ↑/↓ para navegar por los menús.
 - Presiona Enter para seleccionar una opción.
