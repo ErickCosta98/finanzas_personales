@@ -83,13 +83,13 @@ deactivate
 
 #### CMD
 ```cmd
-REM Crear entorno virtual
+# Crear entorno virtual
 python -m venv venv
 
-REM Activar entorno virtual
+# Activar entorno virtual
 venv\Scripts\activate.bat
 
-REM Desactivar
+# Desactivar
 deactivate
 ```
 
