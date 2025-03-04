@@ -23,16 +23,21 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
    cd finanzas_personales
    ```
 
-2. Instala las dependencias:
-
+2. Crear un entorno virtual:
    ```bash
-   pip install -r requirements.txt
+   python3 -m venv ./
    ```
 
-3. Ejecuta la aplicación:
+3. Instala las dependencias:
 
    ```bash
-   python -m finanzas_personales.main
+   ./bin/pip install -r requirements.txt
+   ```
+
+4. Ejecuta la aplicación:
+
+   ```bash
+   ./bin/python -m finanzas_personales.main
    ```
 
 ## Uso
@@ -55,7 +60,6 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
 - `main.py`: Punto de entrada principal.
 
 ## Contribuir
-
 ¡Las contribuciones son bienvenidas! Por favor, abre un issue o un pull request.
 
 ## Licencia
