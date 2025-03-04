@@ -31,13 +31,13 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
 3. Instala las dependencias:
 
    ```bash
-   ./bin/pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 4. Ejecuta la aplicación:
 
    ```bash
-   ./bin/python -m finanzas_personales.main
+   python3 -m finanzas_personales.main
    ```
 
 ## Uso
