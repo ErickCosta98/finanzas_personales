@@ -151,7 +151,7 @@ deactivate
 
 ## Captura de Pantalla
 
-![Menú Principal](https://raw.githubusercontent.com/tu-usuario/finanzas_personales/main/menu_principal.png)
+![Menú Principal](https://raw.githubusercontent.com/ErickCosta98/finanzas_personales/main/menu_principal.png)
 
 ## Estructura del Proyecto
 
