@@ -13,5 +13,9 @@ async def main():
     finally:
         db.close()
 
-if __name__ == "__main__":
+def run_main():
+    """Función síncrona que ejecuta la corrutina main."""
     asyncio.run(main())
+
+if __name__ == "__main__":
+    run_main()

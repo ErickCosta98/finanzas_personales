@@ -1,3 +1,4 @@
+# setup.py
 from setuptools import setup, find_packages
 
 setup(
@@ -11,7 +12,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "finanzas_personales = finanzas_personales.main:main"
+            "finanzas_personales = finanzas_personales.main:run_main"  # Cambiado a run_main
         ]
     },
     author="Tu Nombre",
