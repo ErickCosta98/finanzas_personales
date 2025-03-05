@@ -1,3 +1,6 @@
+[![PyPI Latest Release](https://img.shields.io/pypi/v/finanzas_personales.svg)](https://pypi.org/project/finanzas_personales/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/finanzas_personales)](https://pypi.org/project/finanzas_personales/)
+[![GitHub Release Date](https://img.shields.io/github/release-date/ErickCosta98/finanzas_personales)](https://github.com/ErickCosta98/finanzas_personales/releases) [![GitHub License](https://img.shields.io/github/license/ErickCosta98/finanzas_personales)](https://github.com/ErickCosta98/financieros/blob/main/LICENSE)
+
 # Finanzas Personales
 
 Una aplicación de consola para gestionar finanzas personales, incluyendo ingresos, egresos, resúmenes y gráficos.
@@ -15,6 +18,22 @@ Una aplicación de consola para gestionar finanzas personales, incluyendo ingres
 - Dependencias: `rich`, `prompt_toolkit`, `matplotlib`
 
 ## Instalación
+
+### Opción 1: Desde PyPI
+
+1. Instala el paquete directamente desde PyPI:
+
+   ```bash
+   pip install finanzas_personales
+   ```
+
+2. Ejecuta la aplicación:
+
+   ```bash
+   finanzas_personales
+   ```
+
+### Opción 2: Clonar Repo
 
 1. Clona el repositorio:
 
@@ -44,6 +63,7 @@ A continuación, se detallan los comandos para crear y activar un entorno virtua
 ### Linux / macOS
 
 #### Bash
+
 ```bash
 # Crear entorno virtual
 python3 -m venv venv
@@ -56,6 +76,7 @@ deactivate
 ```
 
 #### Zsh
+
 ```zsh
 # Crear entorno virtual
 python3 -m venv venv
@@ -68,6 +89,7 @@ deactivate
 ```
 
 #### Fish
+
 ```fish
 # Crear entorno virtual
 python3 -m venv venv
@@ -82,6 +104,7 @@ deactivate
 ### Windows
 
 #### CMD
+
 ```cmd
 # Crear entorno virtual
 python -m venv venv
@@ -94,6 +117,7 @@ deactivate
 ```
 
 #### PowerShell
+
 ```powershell
 # Crear entorno virtual
 python -m venv venv
@@ -106,6 +130,7 @@ deactivate
 ```
 
 #### Git Bash
+
 ```bash
 # Crear entorno virtual
 python -m venv venv
@@ -126,7 +151,7 @@ deactivate
 
 ## Captura de Pantalla
 
-![Menú Principal](menu_principal.png)
+![Menú Principal](https://raw.githubusercontent.com/tu-usuario/finanzas_personales/main/menu_principal.png)
 
 ## Estructura del Proyecto
 
@@ -137,6 +162,7 @@ deactivate
 - `main.py`: Punto de entrada principal.
 
 ## Contribuir
+
 ¡Las contribuciones son bienvenidas! Por favor, abre un issue o un pull request.
 
 ## Licencia
