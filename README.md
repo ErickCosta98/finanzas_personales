@@ -1,4 +1,4 @@
-[![PyPI Latest Release](https://img.shields.io/pypi/v/finanzas_personales.svg)](https://pypi.org/project/finanzas_personales/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/finanzas_personales)](https://pypi.org/project/finanzas_personales/)
+[![PyPI Latest Release](https://img.shields.io/pypi/v/finanzas-personales.svg)](https://pypi.org/project/finanzas-personales/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/finanzas-personales)](https://pypi.org/project/finanzas-personales/)
 [![GitHub Release Date](https://img.shields.io/github/release-date/ErickCosta98/finanzas_personales)](https://github.com/ErickCosta98/finanzas_personales/releases) [![GitHub License](https://img.shields.io/github/license/ErickCosta98/finanzas_personales)](https://github.com/ErickCosta98/financieros/blob/main/LICENSE)
 
 # Finanzas Personales
