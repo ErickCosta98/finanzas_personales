@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="finanzas_personales",  # Nombre del paquete en PyPI
-    version="0.1.1",  # cámbiala según avances
+    version="0.1.2",  # cámbiala según avances
     packages=find_packages(),  # Encuentra automáticamente los subpaquetes
     install_requires=[
         "rich>=13.0.0",

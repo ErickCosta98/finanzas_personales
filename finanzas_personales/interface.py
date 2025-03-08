@@ -20,12 +20,9 @@ from typing import List, Dict, Tuple
 from .database import Database
 from .graphics import GraficaConsola, crear_grafico_categorias
 from .models import FinanzasConfig
+from .clearConsole import clear_console
 
 console = Console()
-
-def limpiar_pantalla():
-    """Limpia la pantalla de la consola."""
-    console.clear()
 
 class NumberValidator(Validator):
     """Validador para asegurar que la entrada sea un número no negativo."""
@@ -106,7 +103,7 @@ class Interface:
         return self.opciones_principal, FormattedText(menu_text), layout
 
     async def seleccionar_categoria(self, categorias: List[str], tipo: str) -> str:
-        limpiar_pantalla()
+        clear_console()
         color = "green" if tipo == "Ingreso" else "red"
         console.print(Panel(f"[bold][{color}]REGISTRAR {tipo.upper()}[/{color}][/bold]", box=box.ROUNDED))
         indice = [0]
@@ -185,7 +182,7 @@ class Interface:
         pagina = [0]
         items_por_pagina = 10
         while True:
-            limpiar_pantalla()
+            clear_console()
             transacciones = self.db.obtener_transacciones()
             if not transacciones:
                 console.print("[yellow]No hay transacciones registradas.[/yellow]")
@@ -235,7 +232,7 @@ class Interface:
                 return
 
     async def mostrar_resumen(self):
-        limpiar_pantalla()
+        clear_console()
         resumen_total = self.db.obtener_resumen()
         resumen_mes = self.db.obtener_resumen_mes_actual()
         egresos_mes = self.db.obtener_datos_por_categoria("Egreso", "mes")
@@ -334,7 +331,7 @@ class Interface:
                 crear_grafico_categorias("Egreso", self.db.obtener_datos_por_categoria("Egreso"))
 
     async def mostrar_grafico_consola(self, tipo: str):
-        limpiar_pantalla()
+        clear_console()
         datos = self.db.obtener_datos_por_categoria(tipo)
         if not datos:
             console.print(f"[yellow]No hay datos de {tipo.lower()} para graficar.[/yellow]")
@@ -404,12 +401,12 @@ class Interface:
             elif opcion_seleccionada[0] == 4:
                 await self.menu_graficos()
             elif opcion_seleccionada[0] == 5:
-                limpiar_pantalla()
+                clear_console()
                 console.print("[yellow]¡Hasta pronto![/yellow]")
                 self.db.close()
                 event.app.exit()
             # Refrescar el dashboard completo después de regresar de un submenú
-            limpiar_pantalla()
+            clear_console()
             console.print(Panel(
                 Align.center("[bold bright_cyan]FINANZAS PERSONALES[/bold bright_cyan]", vertical="middle"),
                 box=box.ROUNDED,

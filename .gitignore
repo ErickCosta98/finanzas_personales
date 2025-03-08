@@ -10,6 +10,9 @@ dist/*
 __pycache__/*
 */__pycache__/*
 
+lib64/
+share/
+./pyenv.cfg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -109,4 +112,3 @@ wheelhouse/
 *.egg-info/
 dist/
 build/
-
